@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Clock Display</title>
+    <style type="text/css">
+    body{
+        background: #000000;
+    }
+    .clock{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: #ffffff;
+        font-size: 90px;
+        border: 1px solid #ccc;
+        padding: 0px 5px 0px 5px;
+    }
+    .ucapan{
+        text-align: center;
+        transform: ;
+        color: #ffffff;
+        font-size: 30px;
+    }
+    .credit {
+        text-align: justify-left;
+        color: #ffffff;
+        font-size: 10px;
+    }
+    
+    </style>
+    <style>
+        .song {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+	<audio class="song" controls autoplay>
+        <source src="tidur.mp3" type="audio/ogg">
+    </audio>
+    <div id="Ucapan" class="ucapan"
+    <h1>Selamat Tidur Eka :)</h1>
+    <div id="credit" class="credit"
+    <p>Created by AlfianArya</p>
+
+    
+
+    <div id="MyClockDisplay" class="clock">
+<script type="text/javascript">
+
+			function showTime(){
+				var date = new Date();
+				var h = date.getHours(); // 0 - 23
+				var m = date.getMinutes(); // 0 - 59
+				var s = date.getSeconds(); // 0 - 59
+				var session = "AM";
+				
+				if(h >= 12){
+					h = h - 12;
+					session = "PM";
+				}
+
+				if(h == 0){
+					h = 12;
+				}
+
+
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+
+				var time = h + ":" + m + ":" + s + " " + session;
+				document.getElementById("MyClockDisplay").innerText = time;
+				document.getElementById("MyClockDisplay").textContent = time;
+
+				setTimeout(showTime, 1000);
+			}
+
+			showTime();
+
+        </script>
+        
+
+</body>
+</html>
