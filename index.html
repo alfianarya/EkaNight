@@ -31,14 +31,44 @@
     
     </style>
 
+    <style type="text/css">
+
+    .song {
+        color: white;
+        border-style: solid;
+        border-color: white;
+        background-color: #000;
+        position: absolute;
+        top: 15%;
+        left: 46%;
+    }
+
+    </style>
+
+    
+
 </head>
 <body>
-	<audio class="song" controls autoplay>
-        <source src="tidur.mp3" type="audio/ogg">
+    <button class="song" button onclick="playAudio()" type="button">Mainkan Musik</button>
+	<audio id="song">
+        <source src="tidur.ogg" type="audio/ogg">
+        <source src="tidur.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-    <div id="Ucapan" class="ucapan"></div>
+
+    <script>
+
+        var x = document.getElementById("song"); 
+    
+        function playAudio() { 
+            x.play(); 
+        }
+    
+        </script>
+
+    <div id="Ucapan" class="ucapan"
     <h1>Selamat Tidur Eka :)</h1>
-    <div id="credit" class="credit"></div>
+    <div id="credit" class="credit"
     <p>Created by AlfianArya</p>
 
     
